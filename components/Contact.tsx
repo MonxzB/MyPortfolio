@@ -14,12 +14,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('sending');
 
-    // Gom dữ liệu từ form
     const formData = new FormData(e.currentTarget);
+    
+    // THÊM MÃ ACCESS KEY CỦA BẠN VÀO DÒNG NÀY:
+    formData.append("access_key", "c3b90d22-c1d0-471d-b2ae-859b5f6b1543");
 
     try {
-      // THAY ĐƯỜNG LINK FORMSPREE CỦA BẠN VÀO ĐÂY
-      const response = await fetch("https://formspree.io/f/xovyeoby", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
         headers: {
@@ -27,9 +28,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         }
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setFormState('success');
-        e.currentTarget.reset(); // Xóa trắng form sau khi gửi thành công
+        e.currentTarget.reset(); 
       } else {
         setFormState('idle');
         alert("Có lỗi xảy ra, vui lòng thử lại sau!");
@@ -39,7 +42,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       alert("Lỗi kết nối mạng!");
     }
 
-    // Đặt lại trạng thái nút bấm sau 3 giây
     setTimeout(() => setFormState('idle'), 3000);
   };
 
