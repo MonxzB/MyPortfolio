@@ -88,14 +88,14 @@ const Hero: React.FC<HeroProps> = ({ profile }) => {
           <div className="relative hidden lg:block">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform rotate-3 hover:rotate-0 transition-all duration-500">
               <img 
-                src="https://picsum.photos/600/600?random=100" 
+                src="../public/avatar.png" 
                 alt="Workspace Setup" 
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                 <div className="text-white">
-                  <p className="font-bold">Dự Án Mới Nhất</p>
-                  <p className="text-sm opacity-80">Phim Tài Liệu</p>
+                  <p className="font-bold">Vũ Bảo</p>
+                  <p className="text-sm opacity-80">Quản trị kênh Youtube</p>
                 </div>
               </div>
             </div>

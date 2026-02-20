@@ -47,7 +47,11 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => handleNavClick('#welcome')}>
-            <Video className="h-8 w-8 text-primary" />
+            <img 
+              src="../public/logo.svg" 
+              alt="Logo" 
+              className="h-12 w-12 object-contain" /* Điều chỉnh kích thước h-8 w-8 tùy ý */
+            />
             <span className="ml-2 font-bold text-xl tracking-tight">Portfolio</span>
           </div>
           

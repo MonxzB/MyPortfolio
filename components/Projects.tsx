@@ -37,7 +37,7 @@ const useYoutubeStats = (url: string, initialMetrics?: ProjectMetrics) => {
     if (!videoId) return;
 
     const fetchStats = async () => {
-      try {//as
+      try {
         // ĐIỀN API KEY CỦA BẠN VÀO ĐÂY
         const API_KEY = "AIzaSyAeCltQwa74FRSbQVcO8VDO10Veza_UPas"; 
         const fetchUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`;
@@ -68,12 +68,10 @@ const useYoutubeStats = (url: string, initialMetrics?: ProjectMetrics) => {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   const videoId = getYoutubeId(project.youtubeUrl);
-  // Use provided thumbnail or fallback to YouTube max res
   const thumbnail = project.thumbnail || (videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : 'https://placehold.co/600x400?text=No+Video');
   
-  // Note: For listing, we might stick to Sheet metrics to avoid N API calls immediately, 
-  // or simple visual fallback. Here we use what's passed from parent (sheet data) 
-  // to keep list performance high. Real-time stats are fetched in Modal.
+  // GỌI API LẤY STATS TRỰC TIẾP CHO TỪNG CARD DỰA TRÊN URL CỦA DỰ ÁN NÀY
+  const metrics = useYoutubeStats(project.youtubeUrl, project.metrics);
   
   return (
     <div 
@@ -87,7 +85,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           loading="lazy"
           className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
           onError={(e) => {
-            // Fallback if maxresdefault doesn't exist (some videos only have hqdefault)
             if (videoId && (e.target as HTMLImageElement).src.includes('maxresdefault')) {
                 (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
             }
@@ -98,14 +95,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             <Play fill="currentColor" className="w-6 h-6 ml-1" />
           </div>
         </div>
-        {/* Simple metric overlay if available in Sheet */}
-        {(project.metrics?.views || project.metrics?.viewCount) && (
-           <div className="absolute bottom-2 left-2 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded font-bold flex items-center gap-1">
-             <Eye className="w-3 h-3" />
-             {project.metrics.viewCount || project.metrics.views}
-           </div>
-        )}
+        
+        {/* HIỂN THỊ CHỈ SỐ VIEW, LIKE, COMMENT BÊN DƯỚI GÓC TRÁI THUMBNAIL */}
+        <div className="absolute bottom-2 left-2 flex gap-2 flex-wrap">
+           {metrics?.viewCount && (
+             <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded font-bold flex items-center gap-1">
+               <Eye className="w-3 h-3" />
+               {metrics.viewCount}
+             </div>
+           )}
+           {metrics?.likeCount && (
+             <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded font-bold flex items-center gap-1">
+               <ThumbsUp className="w-3 h-3" />
+               {metrics.likeCount}
+             </div>
+           )}
+           {metrics?.commentCount && (
+             <div className="bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded font-bold flex items-center gap-1">
+               <MessageCircle className="w-3 h-3" />
+               {metrics.commentCount}
+             </div>
+           )}
+        </div>
       </div>
+      
       <div className="p-5 flex-1 flex flex-col">
         <div className="flex flex-wrap gap-2 mb-2">
           {project.tags.slice(0, 3).map(tag => (
@@ -326,7 +339,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects, profile }) => {
 
         {/* Partners Static Grid */}
         <div className="mb-16">
-             <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8">Đối Tác & Khách Hàng</p>
+             <p className="text-center text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8">Đối Tác & Network lớn</p>
              <div className="flex flex-wrap justify-center gap-8 md:gap-16">
                   {PARTNERS_DATA.map((partner, index) => (
                       <div key={index} className="flex flex-col items-center gap-3 group">
@@ -359,10 +372,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects, profile }) => {
              </div>
            )}
         </div>
-
         {/* CTA */}
         <div className="text-center">
-          <a 
+          <p 
             href={profile?.socials?.youtube || profile?.socials?.facebook || "#contacts"} 
             target="_blank" 
             rel="noreferrer"
@@ -371,7 +383,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects, profile }) => {
             <Youtube className="w-5 h-5 mr-2 text-red-600 group-hover:scale-110 transition-transform" />
             Xem Tất Cả Dự Án Trên YouTube
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform opacity-50 group-hover:opacity-100" />
-          </a>
+          </p>
         </div>
 
       </div>

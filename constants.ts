@@ -39,20 +39,6 @@ export const SKILLS: Skill[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "1",
-    title: "Cozy Treehouse Power Outage (Candlelight, Warm Rice, Quiet Family) | Ghibli-Style ASMR",
-    thumbnail: "https://i.ytimg.com/vi/ryHuglWv0RY/maxresdefault.jpg",
-    type: "Video Dài",
-    role: ["Dựng chính", "Biên tập", "Thumbnail"],
-    tools: ["Premiere Pro", "After Effects", "Photoshop"],
-    description: "Video phân tích sâu về sự trở lại của Cyberpunk 2077. Tập trung vào chuyển cảnh động và âm thanh vòm sống động.",
-    metrics: { views: "1.2M", likes: "85K", retention: "45%" },
-    youtubeUrl: "https://www.youtube.com/watch?v=ryHuglWv0RY",
-    date: "10/2023",
-    tags: ["Gaming", "Video Essay", "4K"],
-    featured: true
-  },
-  {
     id: "2",
     title: "Peaceful Rainy Night Ambience: Family Home, Soft TV Glow, Futon Sleep | Ghibli-Style ASMR",
     thumbnail: "https://i.ytimg.com/vi/vjJ4wqP0FX8/maxresdefault.jpg",
@@ -78,6 +64,20 @@ export const PROJECTS: Project[] = [
     youtubeUrl: "https://www.youtube.com/watch?v=r_f6Z8QPHQw",
     date: "01/2024",
     tags: ["Lifestyle", "Vertical", "Viral"],
+    featured: true
+  },
+  {
+    id: "1",
+    title: "Cozy Treehouse Power Outage (Candlelight, Warm Rice, Quiet Family) | Ghibli-Style ASMR",
+    thumbnail: "https://i.ytimg.com/vi/ryHuglWv0RY/maxresdefault.jpg",
+    type: "Video Dài",
+    role: ["Dựng chính", "Biên tập", "Thumbnail"],
+    tools: ["Premiere Pro", "After Effects", "Photoshop"],
+    description: "Video phân tích sâu về sự trở lại của Cyberpunk 2077. Tập trung vào chuyển cảnh động và âm thanh vòm sống động.",
+    metrics: { views: "1.2M", likes: "85K", retention: "45%" },
+    youtubeUrl: "https://www.youtube.com/watch?v=ryHuglWv0RY",
+    date: "10/2023",
+    tags: ["Gaming", "Video Essay", "4K"],
     featured: true
   },
   {
