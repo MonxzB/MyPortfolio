@@ -10,15 +10,37 @@ const Contact: React.FC<ContactProps> = ({ profile }) => {
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success'>('idle');
   const [copied, setCopied] = useState(false);
   
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('sending');
-    // Simulate backend call
-    setTimeout(() => {
-      setFormState('success');
-      // Reset after 3 seconds
-      setTimeout(() => setFormState('idle'), 3000);
-    }, 1500);
+
+    // Gom dữ liệu từ form
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      // THAY ĐƯỜNG LINK FORMSPREE CỦA BẠN VÀO ĐÂY
+      const response = await fetch("https://formspree.io/f/xovyeoby", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setFormState('success');
+        e.currentTarget.reset(); // Xóa trắng form sau khi gửi thành công
+      } else {
+        setFormState('idle');
+        alert("Có lỗi xảy ra, vui lòng thử lại sau!");
+      }
+    } catch (error) {
+      setFormState('idle');
+      alert("Lỗi kết nối mạng!");
+    }
+
+    // Đặt lại trạng thái nút bấm sau 3 giây
+    setTimeout(() => setFormState('idle'), 3000);
   };
 
   const copyEmail = () => {
@@ -101,6 +123,7 @@ const Contact: React.FC<ContactProps> = ({ profile }) => {
                 <input 
                   type="text" 
                   id="name" 
+                  name="name"
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                   placeholder="Tên của bạn"
@@ -110,6 +133,7 @@ const Contact: React.FC<ContactProps> = ({ profile }) => {
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
                 <input 
                   type="email" 
+                  name="email"
                   id="email" 
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
@@ -120,6 +144,7 @@ const Contact: React.FC<ContactProps> = ({ profile }) => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Lời Nhắn</label>
                 <textarea 
                   id="message" 
+                  name="message"
                   rows={4} 
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
