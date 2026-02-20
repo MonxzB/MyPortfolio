@@ -88,7 +88,7 @@ const Hero: React.FC<HeroProps> = ({ profile }) => {
           <div className="relative hidden lg:block">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 transform rotate-3 hover:rotate-0 transition-all duration-500">
               <img 
-                src="../public/avatar.png" 
+                src="https://res.cloudinary.com/dqwomkvxi/image/upload/v1771583508/avatar_tus6k2.png" 
                 alt="Workspace Setup" 
                 className="w-full h-auto object-cover"
               />

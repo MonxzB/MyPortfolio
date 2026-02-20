@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={() => handleNavClick('#welcome')}>
             <img 
-              src="../public/logo.svg" 
+              src="https://res.cloudinary.com/dqwomkvxi/image/upload/v1771583505/logo_wgr3nc.svg" 
               alt="Logo" 
               className="h-12 w-12 object-contain" /* Điều chỉnh kích thước h-8 w-8 tùy ý */
             />
