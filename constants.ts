@@ -181,7 +181,7 @@ export const EDUCATION_DATA: EducationItem[] = [
 ];
 
 export const CERTIFICATES_DATA: Certificate[] = [
-  { name: "YouTube Certified - Channel Growth", issuer: "Google / YouTube" },
+  { name: "Gemini Certified Faculty", issuer: "A.I" },
   { name: "Google Analytics 4 Certification", issuer: "Google" },
   { name: "Video Editing Masterclass", issuer: "Udemy" },
   { name: "Digital Marketing Fundamentals", issuer: "Google Digital Garage" }
