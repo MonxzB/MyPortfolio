@@ -38,100 +38,204 @@ export const SKILLS: Skill[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  {
-    id: "2",
-    title: "Peaceful Rainy Night Ambience: Family Home, Soft TV Glow, Futon Sleep | Ghibli-Style ASMR",
-    thumbnail: "https://i.ytimg.com/vi/vjJ4wqP0FX8/maxresdefault.jpg",
-    type: "Video Dài",
-    role: ["Dựng phim", "Chỉnh màu"],
-    tools: ["DaVinci Resolve"],
-    description: "Video biến hình nhịp độ nhanh. Cắt ghép theo nhạc và đồ họa hiển thị giá cả rõ ràng.",
-    metrics: { views: "450K", ctr: "12%" },
-    youtubeUrl: "https://www.youtube.com/watch?v=vjJ4wqP0FX8&t=3s",
-    date: "12/2023",
-    tags: ["Tech", "Vlog", "Clean Edit"],
-    featured: true
-  },
-  {
-    id: "3",
-    title: "Cozy Rain Ambience in a Forest Cabin (Warm Light, Safe Silence, Deep Rest) | Ghibli-Style ASMR",
-    thumbnail: "https://i.ytimg.com/vi/r_f6Z8QPHQw/maxresdefault.jpg",
-    type: "Shorts",
-    role: ["Dựng phim", "Phụ đề"],
-    tools: ["CapCut", "Premiere Pro"],
-    description: "Video dọc năng lượng cao cho TikTok và YouTube Shorts. Mở đầu cuốn hút và nhịp điệu dồn dập.",
-    metrics: { views: "2.5M", retention: "80%" },
-    youtubeUrl: "https://www.youtube.com/watch?v=r_f6Z8QPHQw",
-    date: "01/2024",
-    tags: ["Lifestyle", "Vertical", "Viral"],
-    featured: true
-  },
-  {
-    id: "1",
-    title: "Cozy Treehouse Power Outage (Candlelight, Warm Rice, Quiet Family) | Ghibli-Style ASMR",
-    thumbnail: "https://i.ytimg.com/vi/ryHuglWv0RY/maxresdefault.jpg",
-    type: "Video Dài",
-    role: ["Dựng chính", "Biên tập", "Thumbnail"],
-    tools: ["Premiere Pro", "After Effects", "Photoshop"],
-    description: "Video phân tích sâu về sự trở lại của Cyberpunk 2077. Tập trung vào chuyển cảnh động và âm thanh vòm sống động.",
-    metrics: { views: "1.2M", likes: "85K", retention: "45%" },
-    youtubeUrl: "https://www.youtube.com/watch?v=ryHuglWv0RY",
-    date: "10/2023",
-    tags: ["Gaming", "Video Essay", "4K"],
-    featured: true
-  },
-  {
-    id: "4",
-    title: "Life 1.2 Million Years Ago | The First River Burial Rituals of Prehistoric Humans",
-    thumbnail: "https://i.ytimg.com/vi/vQqnaAAoCLQ/maxresdefault.jpg",
-    type: "Series",
-    role: ["Dựng phim", "Âm thanh"],
-    tools: ["Premiere Pro"],
-    description: "Phần 1 của series du lịch 4 tập. Chỉnh màu điện ảnh và âm thanh môi trường chân thực.",
-    metrics: { views: "300K" },
-    youtubeUrl: "https://www.youtube.com/watch?v=vQqnaAAoCLQ&t=39s",
-    date: "09/2023",
-    tags: ["Travel", "Cinematic", "Vlog"]
-  },
-  {
-    id: "5",
-    title: "Life 1.2 Million Years Ago | How Prehistoric Humans Mummified Their Dead",
-    thumbnail: "hhttps://i.ytimg.com/vi/ml7mPHU0Mzc/maxresdefault.jpg",
-    type: "Video Dài",
-    role: ["Dựng phim", "Motion Graphics"],
-    tools: ["After Effects", "Illustrator"],
-    description: "Nội dung giáo dục yêu cầu trực quan hóa dữ liệu phức tạp và biểu đồ hoạt hình để giải thích các khái niệm chứng khoán.",
-    metrics: { views: "800K", likes: "40K" },
-    youtubeUrl: "https://www.youtube.com/watch?v=ml7mPHU0Mzc&t=633s",
-    date: "11/2023",
-    tags: ["Education", "Motion Graphics", "Finance"]
-  },
-  {
-    id: "6",
-    title: "T–71°C in Yakutia: How a Grandma and Baby Survive Surrounded by Wolves",
-    thumbnail: "https://i.ytimg.com/vi/x7LQiFweULA/maxresdefault.jpg",
-    type: "Video Dài",
-    role: ["Dựng phim"],
-    tools: ["Premiere Pro"],
-    description: "Tổng hợp highlight stream. Zoom, thêm meme và tracking phụ đề hài hước.",
-    metrics: { views: "150K" },
-    youtubeUrl: "https://www.youtube.com/watch?v=x7LQiFweULA",
-    date: "02/2024",
-    tags: ["Gaming", "Comedy", "Memes"]
-  },
-  {
-    id: "7",
-    title: "Alone Against 50 Wolves at His Ice Cave Fridge | Life at –71°C",
-    thumbnail: "https://i.ytimg.com/vi/XJPy4n5JQ5M/maxresdefault.jpg",
-    type: "Video Dài",
-    role: ["Dựng phim"],
-    tools: ["Premiere Pro"],
-    description: "Tổng hợp highlight stream. Zoom, thêm meme và tracking phụ đề hài hước.",
-    metrics: { views: "150K" },
-    youtubeUrl: "https://www.youtube.com/watch?v=XJPy4n5JQ5M&t=3s",
-    date: "02/2024",
-    tags: ["Gaming", "Comedy", "Memes"]
-  }
+{
+  id: "2",
+  title: "Peaceful Rainy Night Ambience: Family Home, Soft TV Glow, Futon Sleep | Ghibli-Style ASMR",
+  thumbnail: "https://i.ytimg.com/vi/vjJ4wqP0FX8/maxresdefault.jpg",
+  type: "Video Dài",
+  role: [
+    "Channel Management",
+    "YouTube SEO",
+    "Content Planner",
+    "Dựng phim",
+    "Chỉnh màu",
+    "Quality Control"
+  ],
+  tools: [
+    "DaVinci Resolve",
+    "YouTube Studio",
+    "Figma",
+    "Google Trends"
+  ],
+  description:
+    "“Peaceful Rainy Night Ambience: Family Home, Soft TV Glow, Futon Sleep | Ghibli-Style ASMR” là video ambience/ASMR tái hiện một đêm mưa yên bình trong căn nhà gia đình, theo vibe Ghibli-inspired ấm áp và chữa lành.\n\nKhông gian được xây dựng bằng các lớp trải nghiệm: tiếng mưa đều trên mái, gió nhẹ ngoài hiên, ánh TV hắt mờ trong phòng khách, và nhịp ngủ trên futon. Nhịp cảnh chậm, chuyển động tối giản (rèm lay nhẹ, phản xạ mưa, ánh TV nhấp nháy) để người xem thư giãn mà không bị phân tâm.\n\nDự án được tối ưu theo intent “sleep / study / relax”: metadata bám đúng từ khóa, cấu trúc nội dung loop-friendly, kiểm soát chất lượng hình/âm để nghe lâu không mệt và giữ cảm giác cozy xuyên suốt.",
+  metrics: { views: "450K", ctr: "12%" },
+  youtubeUrl: "https://www.youtube.com/watch?v=vjJ4wqP0FX8&t=3s",
+  date: "12/2023",
+  tags: [
+    "Ghibli-Style",
+    "ASMR",
+    "Rain Ambience",
+    "Cozy Home",
+    "Sleep",
+    "Study",
+    "Relax"
+  ],
+  featured: true
+},
+{
+  id: "3",
+  title: "Cozy Rain Ambience in a Forest Cabin (Warm Light, Safe Silence, Deep Rest) | Ghibli-Style ASMR",
+  thumbnail: "https://i.ytimg.com/vi/r_f6Z8QPHQw/maxresdefault.jpg",
+  type: "Shorts",
+  role: [
+    "Dựng phim",
+    "Phụ đề",
+    "Content Planner",
+    "Quality Control"
+  ],
+  tools: [
+    "CapCut",
+    "Premiere Pro",
+    "YouTube Studio",
+    "Figma"
+  ],
+  description:
+    "Shorts ambience/ASMR theo vibe Ghibli-inspired: một căn cabin giữa rừng trong đêm mưa, ánh đèn ấm phủ lên nội thất gỗ, cảm giác “an toàn và yên tĩnh” để người xem thả lỏng nhanh.\n\nVì là định dạng Shorts, dự án tập trung vào: mở đầu vào thẳng mood trong 1–2 giây, bố cục 9:16 tối giản, chuyển động nhỏ tự nhiên (giọt mưa trên cửa sổ, ánh đèn rung nhẹ, hơi nước mờ), và kết thúc dạng loop để tăng retention.\n\nPhần phụ đề được canh thời gian và kích thước theo mobile-first, đảm bảo dễ đọc mà không phá không gian “deep rest”.",
+  metrics: { views: "2.5M", retention: "80%" },
+  youtubeUrl: "https://www.youtube.com/watch?v=r_f6Z8QPHQw",
+  date: "01/2024",
+  tags: [
+    "Ghibli-Style",
+    "ASMR",
+    "Rain Ambience",
+    "Forest Cabin",
+    "Cozy",
+    "Shorts",
+    "Vertical",
+    "Loop",
+    "Deep Rest"
+  ],
+  featured: true
+},
+{
+  id: "1",
+  title: "Cozy Treehouse Power Outage (Candlelight, Warm Rice, Quiet Family) | Ghibli-Style ASMR",
+  thumbnail: "https://i.ytimg.com/vi/ryHuglWv0RY/maxresdefault.jpg",
+  type: "Video Dài",
+  role: [
+    "Dựng chính",
+    "Biên tập",
+    "Thumbnail",
+    "Content Planner",
+    "Quality Control"
+  ],
+  tools: [
+    "Premiere Pro",
+    "After Effects",
+    "Photoshop",
+    "YouTube Studio",
+    "Figma"
+  ],
+  description:
+    "Video ambience/ASMR phong cách Ghibli-inspired lấy bối cảnh một căn treehouse mất điện trong đêm: ánh nến lung linh, bữa cơm ấm (warm rice), và không khí gia đình yên tĩnh tạo cảm giác “an toàn – chữa lành”.\n\nDự án tập trung vào mood kể chuyện bằng chi tiết nhỏ: ánh nến flicker tạo bóng đổ mềm trên tường gỗ, hơi ấm từ bếp và đồ ăn, chuyển động tinh tế của rèm/đồ vật theo gió, giúp người xem thả lỏng mà không bị phân tâm.\n\nPhần dựng ưu tiên nhịp chậm và mượt: ít cắt gắt, chuyển cảnh êm, giữ tone màu ấm xuyên suốt. Thumbnail được thiết kế theo mobile-first với điểm nhấn candlelight để tăng CTR và truyền đúng “cozy power outage” ngay từ cái nhìn đầu tiên.",
+  metrics: { views: "1.2M", likes: "85K", retention: "45%" },
+  youtubeUrl: "https://www.youtube.com/watch?v=ryHuglWv0RY",
+  date: "10/2023",
+  tags: [
+    "Ghibli-Style",
+    "ASMR",
+    "Cozy",
+    "Treehouse",
+    "Candlelight",
+    "Power Outage",
+    "Sleep",
+    "Relax",
+    "Ambience"
+  ],
+  featured: true
+},
+{
+  id: "4",
+  title: "Life 1.2 Million Years Ago | The First River Burial Rituals of Prehistoric Humans",
+  thumbnail: "https://i.ytimg.com/vi/vQqnaAAoCLQ/maxresdefault.jpg",
+  type: "Series",
+  role: ["Dựng phim", "Âm thanh"],
+  tools: ["Premiere Pro", "YouTube Studio"],
+  description:
+    "Tập mở đầu series “Life 1.2 Million Years Ago” tái hiện nghi thức an táng bên sông của người tiền sử, tập trung vào cảm xúc, nhịp kể chuyện và bối cảnh thiên nhiên nguyên sơ.\n\nPhần dựng ưu tiên không khí điện ảnh: nhịp cắt chậm, chuyển cảnh mượt, giữ continuity giữa các cảnh (dòng sông, trại, nhân vật, đạo cụ). Âm thanh được xây dựng theo lớp để tăng immersion: tiếng nước chảy, gió qua lau sậy, bước chân trên bùn, tiếng lửa trại, tiếng chim xa.\n\nVideo được đóng gói theo hướng series: hook mở đầu rõ chủ đề, nhấn điểm cao trào, kết thúc gợi mở tập tiếp theo để tăng lượt xem chuỗi.",
+  metrics: { views: "300K" },
+  youtubeUrl: "https://www.youtube.com/watch?v=vQqnaAAoCLQ&t=39s",
+  date: "09/2023",
+  tags: [
+    "Prehistoric",
+    "Documentary",
+    "Cinematic",
+    "Series",
+    "Ancient Humans",
+    "Ritual",
+    "River Burial",
+    "History"
+  ]
+},
+{
+  id: "5",
+  title: "Life 1.2 Million Years Ago | How Prehistoric Humans Mummified Their Dead",
+  thumbnail: "https://i.ytimg.com/vi/ml7mPHU0Mzc/maxresdefault.jpg",
+  type: "Video Dài",
+  role: ["Dựng phim", "Motion Graphics"],
+  tools: ["After Effects", "Illustrator", "Premiere Pro"],
+  description:
+    "Video dài thuộc series “Life 1.2 Million Years Ago” với chủ đề tái hiện quy trình ướp xác của người tiền sử theo hướng kể chuyện + trực quan hóa.\n\nPhần motion graphics đóng vai trò giải thích: minh họa dụng cụ, vật liệu, các bước thực hiện, và timeline diễn tiến (từ chuẩn bị → thực hiện → hoàn tất). Dựng phim tập trung nhịp kể rõ ràng, nhấn các mốc quan trọng bằng text/diagram tối giản để người xem theo kịp.\n\nMàu sắc và bố cục được giữ tone cổ xưa, bụi đất, ánh lửa và ánh nắng gắt, tạo cảm giác “ancient documentary” nhất quán xuyên suốt.",
+  metrics: { views: "800K", likes: "40K" },
+  youtubeUrl: "https://www.youtube.com/watch?v=ml7mPHU0Mzc&t=633s",
+  date: "11/2023",
+  tags: [
+    "Prehistoric",
+    "Documentary",
+    "Motion Graphics",
+    "Ancient Humans",
+    "Mummification",
+    "History",
+    "Education"
+  ]
+},
+{
+  id: "6",
+  title: "T–71°C in Yakutia: How a Grandma and Baby Survive Surrounded by Wolves",
+  thumbnail: "https://i.ytimg.com/vi/x7LQiFweULA/maxresdefault.jpg",
+  type: "Video Dài",
+  role: ["Dựng phim"],
+  tools: ["Premiere Pro"],
+  description:
+    "Video chủ đề “coolest place on the world” lấy bối cảnh Yakutia ở mức nhiệt T–71°C, kể câu chuyện sinh tồn của một bà cụ và em bé giữa vùng tuyết trắng, xung quanh là đàn sói.\n\nDựng theo hướng cinematic–documentary: nhịp kể căng nhưng chậm vừa đủ để giữ cảm giác lạnh buốt, cô lập và nguy hiểm. Ưu tiên continuity bối cảnh (tuyết, gió, hơi thở, dấu chân), xen kẽ cận cảnh cảm xúc và chi tiết sinh tồn (nhóm lửa, trú ẩn, giữ ấm, quan sát dấu hiệu của sói).\n\nMục tiêu trải nghiệm: tạo cảm giác “bạn đang ở đó” thông qua dựng hình mượt, nhấn khoảnh khắc cao trào khi đối mặt đàn sói, và kết thúc gợi mở để tăng watch time cho các video cùng series Yakutia.",
+  metrics: { views: "150K" },
+  youtubeUrl: "https://www.youtube.com/watch?v=x7LQiFweULA",
+  date: "02/2024",
+  tags: [
+    "Yakutia",
+    "Life at –71°C",
+    "Extreme Cold",
+    "Survival",
+    "Wolves",
+    "Siberia",
+    "Winter",
+    "Cinematic Documentary"
+  ]
+},
+{
+  id: "7",
+  title: "Alone Against 50 Wolves at His Ice Cave Fridge | Life at –71°C",
+  thumbnail: "https://i.ytimg.com/vi/XJPy4n5JQ5M/maxresdefault.jpg",
+  type: "Video Dài",
+  role: ["Dựng phim"],
+  tools: ["Premiere Pro"],
+  description:
+    "Video thuộc chủ đề “coolest place on the world”/Life at –71°C: nhân vật chính đơn độc trong môi trường băng giá, đối mặt đàn sói gần khu “ice cave fridge” (hang băng dùng như tủ lạnh tự nhiên).\n\nCấu trúc dựng tập trung vào storytelling sinh tồn: mở đầu vào thẳng hoàn cảnh và mối đe doạ, tăng dần căng thẳng bằng nhịp dựng + góc máy (wide cô lập → medium hành động → close-up chi tiết nguy hiểm), nhấn các khoảnh khắc quyết định (quan sát, phòng thủ, di chuyển trong bão tuyết).\n\nTone tổng thể lạnh, khắc nghiệt, ưu tiên cảm giác chân thực và kịch tính, giữ mạch để người xem theo đến cuối và dễ binge các phần Yakutia tiếp theo.",
+  metrics: { views: "150K" },
+  youtubeUrl: "https://www.youtube.com/watch?v=XJPy4n5JQ5M&t=3s",
+  date: "02/2024",
+  tags: [
+    "Yakutia",
+    "Life at –71°C",
+    "Ice Cave",
+    "Extreme Cold",
+    "Survival",
+    "Wolves",
+    "Siberia",
+    "Cinematic Documentary"
+  ]
+}
 ];
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
